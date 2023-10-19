@@ -1,0 +1,1 @@
+This folder will contain only the color based CSS files.

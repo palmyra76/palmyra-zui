@@ -1,0 +1,60 @@
+:root {
+    /** Themed color configuration */
+
+    --identify-color: rgb(227, 97, 12);
+
+    --primary-bgcolor-rgb: 12, 69, 227;
+    --primary-bgcolor: rgb(12, 69, 227);
+    --secondary-bgcolor-rgb: 85, 162, 250;
+    --secondary-bgcolor: rgb(85, 162, 250);
+    --default-bgcolor-rgb: 255, 255, 255;
+    --default-bgcolor: rgb(255, 255, 255);
+    --disable-bgcolor-rgb: 128, 128, 128;
+    --disable-bgcolor: rgb(128, 128, 128);
+    --dark-bgcolor-rgb: 0, 0, 0;
+    --dark-bgcolor: rgb(0, 0, 0);
+
+    --primary-text-color-rgb: 12, 69, 227;
+    --primary-text-color: rgb(12, 69, 227);
+    --secondary-text-color-rgb: 255, 255, 255;
+    --secondary-text-color: rgb(255, 255, 255);
+    --default-text-color-rgb: 0, 0, 0;
+    --default-text-color: rgb(0, 0, 0);
+    --disable-text-color-rgb: 128, 128, 128;
+    --disable-text-color: rgb(128, 128, 128);
+
+    --primary-input-text-color-rgb: 12, 69, 227;
+    --primary-input-text-color: rgb(12, 69, 227);
+    --secondary-input-text-color-rgb: 255, 255, 255;
+    --secondary-input-text-color: rgb(255, 255, 255);
+    --default-input-text-color-rgb: 0, 0, 0;
+    --default-input-text-color: rgb(0, 0, 0);
+    --disable-input-text-color-rgb: 128, 128, 128;
+    --disable-input-text-color: rgb(128, 128, 128);
+
+    --primary-border-color-rgb: 12, 69, 227;
+    --primary-border-color: rgb(12, 69, 227);
+    --secondary-border-color-rgb: 80, 80, 80;
+    --secondary-border-color: rgb(80, 80, 80);
+    --default-border-color-rgb: 0, 0, 0;
+    --default-border-color: rgb(0, 0, 0);
+    --disable-border-color-rgb: 128, 128, 128;
+    --disable-border-color: rgb(128, 128, 128);
+
+    --default-link-color-rgb: 0, 0, 0;
+    --default-link-color: rgb(0, 0, 0);
+    --disable-link-color-rgb: 128, 128, 128;
+    --disable-link-color: rgb(128, 128, 128);
+
+    /** Themed color configuration ends*/
+
+
+    /** Standard color configuration */
+    --info-color: rgb(85, 162, 250);
+    --warning-color: rgb(255, 204, 0);
+    --error-color: rgba(245, 22, 22, 0.692);
+    --success-color: rgb(46, 199, 110);
+    --stroke-color: rgb(255, 255, 255);
+
+  
+}

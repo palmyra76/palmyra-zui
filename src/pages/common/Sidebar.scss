@@ -1,0 +1,44 @@
+.sidebar-footer{
+    padding: 5px;
+    position: fixed;
+   bottom: 0;
+   justify-content: center;
+   padding-left: 30px;
+}
+.sidebar-header{
+    margin-bottom: 20px;
+}
+.sidebar-footer-text{
+    color:rgba(255, 255, 255,0.2);
+    font-size: medium;
+    justify-content: center;
+    letter-spacing: 0.05rem;
+    bottom: 0;
+}
+.sidebar-middle{
+   
+
+.css-1g86id8-MuiTreeItem-content .MuiTreeItem-label {
+    width: 100%;
+    min-width: 0;
+    padding-top: 1px;
+    padding-left: 4px;
+    position: relative;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 2;
+    letter-spacing: 0.00938em;
+}
+.css-1g86id8-MuiTreeItem-content:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+
+.MuiTreeItem-iconContainer{
+    color: rgba(255, 255, 255,0.75);
+}
+.css-1g86id8-MuiTreeItem-content .MuiTreeItem-iconContainer svg {
+    font-size: 22px;
+  }
+}

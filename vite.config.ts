@@ -6,14 +6,18 @@ import { extname, relative, resolve } from 'path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 
+// @ts-ignore
+import generalAssets from './plugins/general_assets.js'
+
 export default defineConfig({
   plugins: [react(),
+  generalAssets(),
   libInjectCss(),
   dts({ include: ['lib'] })],
   server: {
-    proxy:{"/api" : "http://localhost:8080/"},
+    proxy: { "/api": "http://localhost:8080/" },
     open: true,
-    port:5000
+    port: 5000
   },
   build: {
     lib: {

@@ -1,0 +1,37 @@
+{
+    "name": "root",
+    "children": [
+        {
+            "path": "/home",
+            "name": "Home"
+        },
+        {
+            "name": "Administration",
+            "children": [
+                {
+                    "label": "User Management",
+                    "name": "usermgmt",
+                    "children": [
+                        {
+                            "path": "/form/admGroup/edit",
+                            "name": "Groups"
+                        },
+                        {
+                            "path": "/form/admUser/view",
+                            "name": "Users"
+                        }
+                    ]
+                },
+                {
+                    "name": "Master Data",
+                    "children": [
+                        {
+                            "path": "/grid/admGroup/view",
+                            "name": "Anganwadi"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

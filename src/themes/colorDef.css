@@ -1,0 +1,8 @@
+.palmyra-form-field-label {
+    color: var(--primary-text-color);
+}
+
+/* palmyra-form-field-data */
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    color: var(--default-input-text-color) !important;
+}
