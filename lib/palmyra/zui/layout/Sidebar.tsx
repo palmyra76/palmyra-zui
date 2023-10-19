@@ -1,13 +1,20 @@
 
 import { Drawer, List, Stack, Toolbar, Typography } from "@mui/material";
-import {layoutConfig, appConfig} from '../../configs/Config';
 
-import '../common/Sidebar.scss';
-import ApplicationMenu from "../../components/layout/ApplicationMenu";
+import './Sidebar.scss';
 
 
-const Sidebar = () => {
+interface SidebarInput {
+  LeftMenu:React.FC, 
+  appTitle:string, 
+  width:string
+}
+
+
+const Sidebar = (props:SidebarInput) => {
   let container = document.body;
+  const Menu = props.LeftMenu;
+  const sideBarWidth = props.width;
 
   let handleDrawerToggle = function () {
   };
@@ -25,13 +32,13 @@ const Sidebar = () => {
             justifyContent="center"
           >
             <Typography variant="h6">
-              {appConfig.title}
+              {props.appTitle}
             </Typography>
           </Stack>
         </Toolbar>
       </div>
       <div className='sidebar-middle'>
-        <ApplicationMenu />
+        <Menu />
       </div>
 
       <div className='sidebar-footer'>
@@ -56,7 +63,7 @@ const Sidebar = () => {
       sx={{
         display: 'block',
         '& .MuiDrawer-paper': {
-          boxSizing: 'border-box', width: layoutConfig.sidebar.width,
+          boxSizing: 'border-box', width: sideBarWidth,
           backgroundColor: "#2A3F54",
           color: "#ffffffef"
         },
@@ -70,10 +77,10 @@ const Sidebar = () => {
       <Drawer
         variant="permanent"
         sx={{
-          width: layoutConfig.sidebar.width,
+          width: sideBarWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: layoutConfig.sidebar.width,
+            width: sideBarWidth,
             boxSizing: "border-box",
             borderRight: "0px",
             backgroundColor: "#2A3F54",
@@ -87,4 +94,8 @@ const Sidebar = () => {
       </Drawer>
     );
 };
-export default Sidebar;
+
+
+export {Sidebar};
+
+export type {SidebarInput};

@@ -1,16 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { StoreFactoryContext } from '../Contexts';
-import AppDataStoreFactory from '../../../../src/components/store/AppDataStoreFactory';
-
-import {hello} from './view'
+import { StoreFactoryContext } from '../PalmyraContext';
 
 import { FlexiLayoutRenderer } from 'palmyra-rui';
+import { DataStoreFactory } from '../Types';
 
 const FormViewHandler = () => {
-    const appStore: AppDataStoreFactory = useContext(StoreFactoryContext);
+    const appStore: DataStoreFactory = useContext(StoreFactoryContext);
     const { pageName } = useParams();
-    const [pageDef, setPageDef] = useState(hello);
+    const [pageDef, setPageDef] = useState({layout:undefined});
 
     useEffect(() => {
         var url = appStore.getPageLayoutUrl(pageName, "view");
@@ -20,8 +18,6 @@ const FormViewHandler = () => {
     const onValidChange = (valid: boolean) => {
         console.log(valid);
     }
-
-    console.log(pageDef);
 
     return <>
         <div> {pageName} View Form</div>

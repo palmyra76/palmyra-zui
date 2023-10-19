@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ThemeContext, AuthContext, StoreFactoryContext } from "../lib/palmyra/zui/Contexts"
+import { ThemeContext, AuthContext, StoreFactoryContext } from "../lib/palmyra/zui/PalmyraContext"
 import AppDataStoreFactory from "./components/store/AppDataStoreFactory";
-import MainLayout from "./pages/layout/MainLayout";
+
 import FormViewHandler from "../lib/palmyra/zui/handlers/FormViewHandler";
 import FormEditHandler from "../lib/palmyra/zui/handlers/FormEditHandler";
+import { LeftMenuLayout } from "../lib/palmyra/zui/layout/LeftMenuLayout";
+import ApplicationMenu from "./components/layout/ApplicationMenu";
 
+import { appConfig } from "./configs/Config";
 
 const storeFactory = new AppDataStoreFactory();
 
@@ -17,8 +20,8 @@ function App() {
           <StoreFactoryContext.Provider value={storeFactory}>
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<MainLayout />}>
-                  <Route path="/form/:pageName/view/:id" element={<FormViewHandler />} />                  
+                <Route path="/" element={<LeftMenuLayout LeftMenu={ApplicationMenu} appTitle={appConfig.title} />}>
+                  <Route path="/form/:pageName/view/:id" element={<FormViewHandler />} />
                   <Route path="/form/:pageName/edit/:id" element={<FormEditHandler />} />
                 </Route>
               </Routes>

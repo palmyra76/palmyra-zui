@@ -1,22 +1,32 @@
 import { Outlet } from "react-router-dom";
 import { Box, CssBaseline, Toolbar } from "@mui/material";
-import {layoutConfig} from "../../configs/Config";
 
-import Sidebar from "../common/Sidebar";
+import {Sidebar} from "./Sidebar";
 
-const MainLayout = () => {
+interface MainLayoutInput {
+    sideBarWidth?: string,
+    LeftMenu: React.FC,
+    appTitle: string
+}
+
+const LeftMenuLayout = (props: MainLayoutInput) => {
+    var width = props.sideBarWidth;
+    if (!width) {
+        width = '250px';
+    }
 
     return (
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <div > TopBar </div>
-            <Sidebar />
+            <Sidebar LeftMenu={props.LeftMenu}
+                appTitle={props.appTitle} width={width} />
             <Box
                 component="main"
                 sx={{
                     flexGrow: 1,
                     p: 3,
-                    width: `calc(100% - ${layoutConfig.sidebar.width})`,
+                    width: `calc(100% - ${width})`,
                     minHeight: "100vh"
                 }}
             >
@@ -27,4 +37,5 @@ const MainLayout = () => {
     );
 };
 
-export default MainLayout;
+export type { MainLayoutInput};
+export { LeftMenuLayout };

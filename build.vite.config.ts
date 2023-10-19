@@ -38,7 +38,8 @@ export default defineConfig({
         '@emotion/styled',
         '@mui/material',
         '@mui/icons-material',
-        '@mui/styled-engine'      
+        '@mui/styled-engine', 
+        'palmyra-rui'      
       ],
       input: Object.fromEntries(
         glob.sync('lib/**/*.{ts,tsx}').map(file => [

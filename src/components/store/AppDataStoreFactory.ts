@@ -1,3 +1,5 @@
+import { DataStoreFactory } from "../../../lib/palmyra/zui/Types";
+
 class AppDataStoreFactory implements DataStoreFactory {
     getMenuStore() {
         throw new Error("Method not implemented.");

@@ -1,12 +1,12 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { StoreFactoryContext } from '../Contexts';
-import AppDataStoreFactory from '../../../../src/components/store/AppDataStoreFactory';
+import { StoreFactoryContext } from '../PalmyraContext';
 
 import { FlexiLayoutRenderer } from 'palmyra-rui';
+import { DataStoreFactory } from '../Types';
 
 const FormEditHandler = () => {
-    const appStore: AppDataStoreFactory = useContext(StoreFactoryContext);
+    const appStore: DataStoreFactory = useContext(StoreFactoryContext);
     const { pageName } = useParams();
     const [pageDef, setPageDef] = useState({
         layout: undefined
