@@ -1,14 +1,12 @@
-import { DataStoreFactory } from "../../../lib/palmyra/zui/Types";
+import { FlexiLayoutDefinition, MenuDef, QueryStore } from "palmyra-rui";
+import { DataStoreFactory } from "../../../lib/main";
 
 class AppDataStoreFactory implements DataStoreFactory {
-    getMenuStore() {
-        throw new Error("Method not implemented.");
+    getMenuStore(): QueryStore<MenuDef>{
+        throw new Error('not implemented');
     }
-    getPageLayoutUrl(pageName: string, action?: string): string {
-        if (action) {
-            return '/api/pageDefs/' + pageName + "/" + action + ".json";
-        } else
-            return '/api/pageDefs/' + pageName + ".json";
+    getPageLayout(pageName: string, action?:string): Promise<FlexiLayoutDefinition>{
+        throw new Error('not implemented');
     }
 }
 

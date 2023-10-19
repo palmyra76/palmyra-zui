@@ -1,7 +1,8 @@
+import { FlexiLayoutDefinition, MenuDef, QueryStore } from "palmyra-rui";
 
 interface DataStoreFactory {
-    getMenuStore(): any;
-    getPageLayoutUrl(pageName: string, action?:string): string;
+    getMenuStore(): QueryStore<MenuDef>;
+    getPageLayout(pageName: string, action?:string): Promise<FlexiLayoutDefinition>;
 }
 
 export type {DataStoreFactory};

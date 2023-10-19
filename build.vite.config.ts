@@ -33,6 +33,7 @@ export default defineConfig({
         'axios',
         'react',
         'react-dom',
+        'react-router-dom',
         'react/jsx-runtime',
         '@emotion/react',
         '@emotion/styled',
