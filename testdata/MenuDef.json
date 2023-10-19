@@ -37,15 +37,15 @@
             "name": "Form",
             "children": [
                 {
-                    "path": "/form/newform/new",
+                    "path": "/form/users/new",
                     "name": "New Form"
                 },
                 {
-                    "path": "/form/editform/edit/1",
+                    "path": "/form/users/edit/1",
                     "name": "Edit Form"
                 },
                 {
-                    "path": "/form/viewform/view/1",
+                    "path": "/form/users/view/1",
                     "name": "View Form"
                 }
             ]

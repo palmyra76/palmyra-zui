@@ -1,6 +1,6 @@
 
 import { Drawer, List, Stack, Toolbar, Typography } from "@mui/material";
-import LayoutConfigs from '../../configs/LayoutConfigs';
+import {layoutConfig, appConfig} from '../../configs/Config';
 
 import '../common/Sidebar.scss';
 import ApplicationMenu from "../../components/layout/ApplicationMenu";
@@ -25,7 +25,7 @@ const Sidebar = () => {
             justifyContent="center"
           >
             <Typography variant="h6">
-              PoshaQ Tracker
+              {appConfig.title}
             </Typography>
           </Stack>
         </Toolbar>
@@ -56,7 +56,7 @@ const Sidebar = () => {
       sx={{
         display: 'block',
         '& .MuiDrawer-paper': {
-          boxSizing: 'border-box', width: LayoutConfigs.sidebar.width,
+          boxSizing: 'border-box', width: layoutConfig.sidebar.width,
           backgroundColor: "#2A3F54",
           color: "#ffffffef"
         },
@@ -70,10 +70,10 @@ const Sidebar = () => {
       <Drawer
         variant="permanent"
         sx={{
-          width: LayoutConfigs.sidebar.width,
+          width: layoutConfig.sidebar.width,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: LayoutConfigs.sidebar.width,
+            width: layoutConfig.sidebar.width,
             boxSizing: "border-box",
             borderRight: "0px",
             backgroundColor: "#2A3F54",

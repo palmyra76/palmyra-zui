@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box, CssBaseline, Toolbar } from "@mui/material";
-import LayoutConfigs from "../../configs/LayoutConfigs";
+import {layoutConfig} from "../../configs/Config";
 
 import Sidebar from "../common/Sidebar";
 
@@ -16,7 +16,7 @@ const MainLayout = () => {
                 sx={{
                     flexGrow: 1,
                     p: 3,
-                    width: `calc(100% - ${LayoutConfigs.sidebar.width})`,
+                    width: `calc(100% - ${layoutConfig.sidebar.width})`,
                     minHeight: "100vh"
                 }}
             >

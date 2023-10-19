@@ -1,0 +1,45 @@
+{
+    "queryUrl": "/api/masterdata/user/:id",
+    "layout": {
+        "tabs": [
+            {
+                "name": "tab01",
+                "sections": [
+                    {
+                        "name": "",
+                        "type": "form",
+                        "formLayout": {
+                            "fields": [
+                                {
+                                    "attribute": "userName",
+                                    "title": "GroupName",
+                                    "required": true,
+                                    "type": "string",
+                                    "errorMessageType": "Only Alphabets are allowed",
+                                    "length": {
+                                        "min": 3,
+                                        "max": 20,
+                                        "message": "Minimum 3 chars, and maximum of 20 chars"
+                                    }
+                                },
+                                {
+                                    "attribute": "address",
+                                    "title": "Description",
+                                    "required": true,
+                                    "type": "textarea",
+                                    "variant" : "outlined",
+                                    "errorMessageType": "Invalid Address",
+                                    "length": {
+                                        "min": 3,
+                                        "max": 256,
+                                        "message": "Minimum 3 chars, and maximum of 256 chars"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

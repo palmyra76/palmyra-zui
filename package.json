@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "vite",
+    "start": "vite --force",
     "dev": "vite",
     "build": "tsc --p ./build.tsconfig.json && vite --config build.vite.config.js build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -34,12 +34,14 @@
     "axios": "^1.4.0",
     "dayjs": "^1.11.9",
     "font-awesome": "^4.7.0",
+    "palmyra-rui": "file:../palmyra-rui/dist",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.12.1"
   },
   "devDependencies": {
+    "@mui/x-tree-view": "^6.0.0-beta.0",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.5",
@@ -68,8 +70,5 @@
   },
   "sideEffects": [
     "**/*.css"
-  ],
-  "dependencies": {
-    "palmyra-rui": "file:../palmyra-rui/dist"
-  }
+  ]
 }

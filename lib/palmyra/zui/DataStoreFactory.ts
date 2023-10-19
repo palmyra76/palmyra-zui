@@ -1,5 +1,5 @@
 
 interface DataStoreFactory {
-    getStore(key: string): any;
-    getMenuStore(key: string): any;
+    getMenuStore(): any;
+    getPageLayoutUrl(pageName: string): string;
 }
