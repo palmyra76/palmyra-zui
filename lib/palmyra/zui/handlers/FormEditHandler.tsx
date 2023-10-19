@@ -7,14 +7,12 @@ import { DataStoreFactory } from '../Types';
 
 const FormEditHandler = () => {
     const appStore: DataStoreFactory = useContext(StoreFactoryContext);
+
     const { pageName } = useParams();
-    const [pageDef, setPageDef] = useState({
-        layout: undefined
-    });
+    const [pageDef, setPageDef] = useState(null);
 
     useEffect(() => {
-        var url = appStore.getPageLayoutUrl(pageName, "edit");
-        fetch(url).then((response) => response.json()).then((d) => setPageDef(d));
+        appStore.getPageLayout(pageName, "view").then((d) => { console.log(d); setPageDef(d) });
     }, [pageName])
 
     const onValidChange = (valid: boolean) => {
@@ -22,8 +20,8 @@ const FormEditHandler = () => {
     }
 
     return <>
-        <div> {pageName} View Form</div>
-        {pageDef.layout ? <FlexiLayoutRenderer layout={pageDef.layout}
+        <div> {pageName} Edit Form</div>
+        {pageDef ? <FlexiLayoutRenderer layout={pageDef}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}
     </>
