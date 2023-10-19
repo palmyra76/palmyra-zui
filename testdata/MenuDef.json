@@ -13,11 +13,9 @@
                     "name": "usermgmt",
                     "children": [
                         {
-                            "path": "/form/admGroup/edit",
                             "name": "Groups"
                         },
                         {
-                            "path": "/form/admUser/view",
                             "name": "Users"
                         }
                     ]
@@ -26,12 +24,40 @@
                     "name": "Master Data",
                     "children": [
                         {
-                            "path": "/grid/admGroup/view",
                             "name": "Anganwadi"
                         }
                     ]
                 }
             ]
+        },
+        {
+            "name": "Form",
+            "children": [
+                {
+                    "path": "/form/newform/new",
+                    "name": "New Form"
+                },
+                {
+                    "path": "/form/editform/edit/1",
+                    "name": "Edit Form"
+                },
+                {
+                    "path": "/form/viewform/view/1",
+                    "name": "View Form"
+                }
+            ]
+        },
+        {
+            "path": "/grid/table/table",
+            "name": "Table"
+        },
+        {
+            "path": "/grid/card/card",
+            "name": "Card"
+        },
+        {
+            "path": "/dashboard/dashboard",
+            "name": "DashBoard"
         }
     ]
 }

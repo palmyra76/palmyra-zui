@@ -2,11 +2,9 @@ import { useParams } from "react-router-dom";
 
 const FormViewHandler = () => {
 
-    const {pageName} = useParams();
+    const { pageName } = useParams();
 
-
-    return <div> {pageName} Form View</div>
+    return <div> {pageName} View Form</div>
 }
-
 
 export default FormViewHandler;
