@@ -13,9 +13,11 @@
                     "name": "usermgmt",
                     "children": [
                         {
+                            "path": "/form/admGroup/edit/1",
                             "name": "Groups"
                         },
                         {
+                            "path": "/form/admGroup/view/1",
                             "name": "Users"
                         }
                     ]
@@ -24,6 +26,7 @@
                     "name": "Master Data",
                     "children": [
                         {
+                            "path": "/grid/admGroup/view",
                             "name": "Anganwadi"
                         }
                     ]
