@@ -7,19 +7,19 @@ import { DataStoreFactory } from '../Types';
 
 const FormViewHandler = () => {
     const appStore: DataStoreFactory = useContext(StoreFactoryContext);
-    const { pageName } = useParams();
+    const params = useParams();
     const [pageDef, setPageDef] = useState(null);
 
     useEffect(() => {
-        appStore.getPageLayout(pageName, "view").then((d) => setPageDef(d));
-    }, [pageName])
+        appStore.getPageLayout(params, "view").then((d) => setPageDef(d));
+    }, [params])
 
     const onValidChange = (valid: boolean) => {
         console.log(valid);
     }
 
     return <>
-        <div> {pageName} View Form</div>
+        <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}
