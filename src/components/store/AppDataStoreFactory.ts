@@ -13,6 +13,7 @@ class AppDataStoreFactory<T> implements DataStoreFactory<T> {
     }
 
     getGridStore(request: Record<string, string>): QueryStore<T> {
+        console.log(request);
         throw new Error("not implemented");
     }
 

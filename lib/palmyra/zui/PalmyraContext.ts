@@ -3,4 +3,4 @@ import { DataStoreFactory } from './Types';
 
 export const ThemeContext = createContext('light');
 export const AuthContext = createContext(null);
-export const StoreFactoryContext = createContext<DataStoreFactory>(null);
+export const StoreFactoryContext = createContext<DataStoreFactory<any>>(null);

@@ -6,7 +6,7 @@ import { FlexiLayoutRenderer } from 'palmyra-rui';
 import { DataStoreFactory } from '../Types';
 
 const FormViewHandler = () => {
-    const appStore: DataStoreFactory = useContext(StoreFactoryContext);
+    const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
     const params = useParams();
     const [pageDef, setPageDef] = useState(null);
 
@@ -21,6 +21,7 @@ const FormViewHandler = () => {
     return <>
         <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
+            storeFactory={appStore}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}
     </>

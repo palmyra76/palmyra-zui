@@ -1,0 +1,10 @@
+{
+    "result": [
+        {
+            "userName": "Rolex",
+            "gender":"M",
+            "email":"rolex@gmail.com"
+        }
+    ],
+    "total": 15
+}
