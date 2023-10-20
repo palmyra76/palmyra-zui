@@ -34,7 +34,8 @@
             ]
         },
         {
-            "name": "Form",
+            "name": "simpleLayoutDemo",
+            "title":"Simple Layout",
             "children": [
                 {
                     "path": "/form/users/new",
@@ -47,20 +48,12 @@
                 {
                     "path": "/form/users/view/1",
                     "name": "View Form"
+                },
+                {
+                    "path": "/grid/users/table",
+                    "name": "Users Grid"
                 }
             ]
-        },
-        {
-            "path": "/grid/table/table",
-            "name": "Table"
-        },
-        {
-            "path": "/grid/card/card",
-            "name": "Card"
-        },
-        {
-            "path": "/dashboard/dashboard",
-            "name": "DashBoard"
         }
     ]
 }

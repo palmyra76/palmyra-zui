@@ -1,0 +1,23 @@
+{
+    "tabs": [
+        {
+            "name": "tab01",
+            "sections": [
+                {
+                    "name": "",
+                    "type": "grid",
+                    "tableLayout": {
+                        "fields": [
+                            {
+                                "attribute": "userName",
+                                "title": "Name",
+                                "required": true,
+                                "type": "string"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

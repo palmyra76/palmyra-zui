@@ -8,6 +8,7 @@ import { LeftMenuLayout } from "../lib/palmyra/zui/layout/LeftMenuLayout";
 import ApplicationMenu from "./components/layout/ApplicationMenu";
 
 import { appConfig } from "./configs/Config";
+import GridViewHandler from "../lib/palmyra/zui/handlers/GridViewHandler";
 
 const storeFactory = new AppDataStoreFactory();
 
@@ -21,8 +22,10 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<LeftMenuLayout LeftMenu={ApplicationMenu} appTitle={appConfig.title} />}>
+                  <Route path="/form/:pageName/new" element={<FormEditHandler />} />
                   <Route path="/form/:pageName/view/:id" element={<FormViewHandler />} />
                   <Route path="/form/:pageName/edit/:id" element={<FormEditHandler />} />
+                  <Route path="/grid/:pageName/table" element={<GridViewHandler />} />
                 </Route>
               </Routes>
             </BrowserRouter>

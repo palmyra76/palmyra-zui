@@ -15,7 +15,7 @@ export default defineConfig({
   libInjectCss(),
   dts({ include: ['lib'] })],
   server: {
-    proxy: { "/api": "http://localhost:8080/" },
+    proxy: { "/api": "http://localhost:7070/" },
     open: true,
     port: 5000
   },

@@ -6,7 +6,7 @@ import { getUrl } from "../../configs/UrlConfigs";
 const orgRoutes = {
     children: [
         {
-            name: "Master Data"
+            name: "Loading Menu ..."
         }
     ]
 };
