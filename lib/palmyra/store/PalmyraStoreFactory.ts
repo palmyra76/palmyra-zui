@@ -1,7 +1,9 @@
-import { ChartStore, FlexiLayoutDefinition, MenuDef, QueryStore, Store, StringFormat } from "palmyra-rui";
-import { DataStoreFactory } from "../../../lib/main";
+import { ChartStore, FlexiLayoutDefinition, MenuDef, QueryStore, DataStore, StringFormat } from "palmyra-rui";
+import { DataStoreFactory } from "../../main";
+import { PalmyraDataStore } from "./PalmyraDataStore";
+import { PalmyraChartStore } from "./PalmyraChartStore";
 
-class AppDataStoreFactory<T> implements DataStoreFactory<T> {
+class PalmyraStoreFactory<T> implements DataStoreFactory<T> {
     getMenuStore(): QueryStore<MenuDef> {
         throw new Error("not implemented");
     }
@@ -13,17 +15,16 @@ class AppDataStoreFactory<T> implements DataStoreFactory<T> {
     }
 
     getGridStore(request: Record<string, string>): QueryStore<T> {
-        console.log(request);
-        throw new Error("not implemented");
+        return new PalmyraDataStore(request);
     }
 
-    getFormStore(request: Record<string, string>): Store<T> {
-        throw new Error("not implemented");
+    getFormStore(request: Record<string, string>): DataStore<T> {
+        return new PalmyraDataStore(request);
     }
 
     getChartStore(request: Record<string, string>): ChartStore<T> {
-        throw new Error("not implemented");
+        return new PalmyraChartStore(request);
     }
 }
 
-export default AppDataStoreFactory;
+export default PalmyraStoreFactory;

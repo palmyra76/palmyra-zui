@@ -1,5 +1,7 @@
 const appConfig = {
-  title : "App Demo"
+  title: "App Demo",
+  apiBaseContext: '/api/data/',
+  layoutBaseContext: '/api/webconfig/'
 }
 
 const layoutConfig = {
@@ -8,4 +10,4 @@ const layoutConfig = {
   }
 };
 
-export {appConfig, layoutConfig}
+export { appConfig, layoutConfig }

@@ -7,6 +7,7 @@
                     "name": "",
                     "type": "grid",
                     "tableLayout": {
+                        "storeOptions": {},
                         "fields": [
                             {
                                 "attribute": "userName",

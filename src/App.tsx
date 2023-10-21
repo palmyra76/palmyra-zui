@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeContext, AuthContext, StoreFactoryContext } from "../lib/palmyra/zui/PalmyraContext"
-import AppDataStoreFactory from "./components/store/AppDataStoreFactory";
 
 import FormViewHandler from "../lib/palmyra/zui/handlers/FormViewHandler";
 import FormEditHandler from "../lib/palmyra/zui/handlers/FormEditHandler";
@@ -9,8 +8,9 @@ import ApplicationMenu from "./components/layout/ApplicationMenu";
 
 import { appConfig } from "./configs/Config";
 import GridViewHandler from "../lib/palmyra/zui/handlers/GridViewHandler";
+import MockStoreFactory from "./components/store/MockStoreFactory";
 
-const storeFactory = new AppDataStoreFactory();
+const storeFactory = new MockStoreFactory();
 
 function App() {
   return (

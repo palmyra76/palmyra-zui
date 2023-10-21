@@ -21,7 +21,8 @@ const FormViewHandler = () => {
     return <>
         <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
-            storeFactory={appStore}
+            storeFactory={appStore} layoutParams={params}
+            mode={'formView'}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}
     </>

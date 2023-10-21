@@ -13,11 +13,12 @@ const GridViewHandler = () => {
     useEffect(() => {
         storeFactory.getPageLayout(params, "grid").then((d) => setPageDef(d));
     }, [params])
-    
+
     return <>
         <div> {params.pageName} View Form</div>
-        {pageDef ? <FlexiLayoutRenderer layout={pageDef}  
-        storeFactory={storeFactory}          
+        {pageDef ? <FlexiLayoutRenderer layout={pageDef}
+            mode={'grid'}
+            storeFactory={storeFactory} layoutParams={params}
         ></FlexiLayoutRenderer> : <div />}
     </>
 }

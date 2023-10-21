@@ -5,16 +5,13 @@ import { StoreFactoryContext } from '../PalmyraContext';
 import { FlexiLayoutRenderer } from 'palmyra-rui';
 import { DataStoreFactory } from '../Types';
 
-const FormEditHandler = () => {
+const FormNewHandler = () => {
     const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
-
     const params = useParams();
     const [pageDef, setPageDef] = useState(null);
 
     useEffect(() => {
-        appStore.getPageLayout(params, "edit")
-            .then((d) => { setPageDef(d) })
-            .catch((r) => setPageDef(null));
+        appStore.getPageLayout(params, "new").then((d) => setPageDef(d));
     }, [params])
 
     const onValidChange = (valid: boolean) => {
@@ -22,7 +19,7 @@ const FormEditHandler = () => {
     }
 
     return <>
-        <div> {params.pageName} Edit Form</div>
+        <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
             storeFactory={appStore} layoutParams={params}
             mode={'formEdit'}
@@ -31,4 +28,4 @@ const FormEditHandler = () => {
     </>
 }
 
-export default FormEditHandler;
+export default FormNewHandler;
