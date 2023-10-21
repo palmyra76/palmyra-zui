@@ -14,8 +14,9 @@ const GridViewHandler = () => {
         storeFactory.getPageLayout(params, "grid").then((d) => setPageDef(d));
     }, [params])
 
+
     return <>
-        <div> {params.pageName} View Form</div>
+        <div> {params.pageName} Grid View</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
             mode={'grid'}
             storeFactory={storeFactory} layoutParams={params}

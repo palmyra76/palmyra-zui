@@ -1,5 +1,5 @@
 {
-    "type" : "formEdit",
+    "type": "formEdit",
     "tabs": [
         {
             "name": "tab01",
@@ -14,7 +14,7 @@
                                 "title": "Name",
                                 "required": true,
                                 "type": "string",
-                                "errorMessageType": "Only Alphabets are allowed",
+                                "validationRule": "string",
                                 "length": {
                                     "min": 3,
                                     "max": 20,
@@ -53,18 +53,21 @@
                                 "attribute": "phoneNumber",
                                 "title": "Phone Number",
                                 "required": true,
-                                "type": "mobilePhone",
-                                "errorMessageType": "Invalid Phone Number"
+                                "type": "string",
+                                "validationRule": "mobilePhone",
+                                "errorMessage": {
+                                    "required": "Mandatory Field",
+                                    "rule": "Invalid Phone Number"
+                                }
                             },
                             {
                                 "attribute": "email",
                                 "title": "Email",
                                 "required": true,
-                                "type": "email",
-                                "errorMessageType": "Invalid Email",
-                                "length": {
-                                    "max": 64,
-                                    "message": "Maximum of 64 chars"
+                                "type": "string",
+                                "validationRule": "email",
+                                "errorMessage": {
+                                    "rule": "Invalid Email"
                                 }
                             },
                             {
@@ -72,8 +75,11 @@
                                 "title": "Address",
                                 "required": true,
                                 "type": "textarea",
+                                "validationRule": "string",
                                 "variant": "outlined",
-                                "errorMessageType": "Invalid Address",
+                                "errorMessage": {
+                                    "rule": "Invalid Address"
+                                },
                                 "length": {
                                     "min": 3,
                                     "max": 256,
