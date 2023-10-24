@@ -15,7 +15,6 @@ const storeFactory = new MockStoreFactory();
 function App() {
   return (
     <>
-      <div>hsdfs</div>
       <ThemeContext.Provider value="light">
         <AuthContext.Provider value="demoUser">
           <StoreFactoryContext.Provider value={storeFactory}>

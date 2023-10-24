@@ -11,7 +11,9 @@ const GridViewHandler = () => {
     const [pageDef, setPageDef] = useState(null);
 
     useEffect(() => {
-        storeFactory.getPageLayout(params, "grid").then((d) => setPageDef(d));
+        storeFactory.getPageLayout(params, "grid")
+            .then((d) => setPageDef(d))
+            .catch(() => { setPageDef(null) });
     }, [params])
 
 
@@ -20,7 +22,7 @@ const GridViewHandler = () => {
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
             mode={'grid'}
             storeFactory={storeFactory} layoutParams={params}
-        ></FlexiLayoutRenderer> : <div />}
+        ></FlexiLayoutRenderer> : <div> Grid Layout Definition not found</div>}
     </>
 }
 
