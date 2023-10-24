@@ -23,17 +23,15 @@ const GridViewHandler = (p: HandlerInput) => {
     const enhancedPageDef = enhance(pageDef);
 
     useEffect(() => {
-        var idKey = props.idProperty || "id";
-
+        const idKey: any = pageDef?.idProperty || props.idProperty || "id";
         var handle = topic.subscribe("viewPage", (topic, data) => {
             data.id = data[idKey];
             navigate(StringFormat('view/{id}', data));
         });
-
         return () => {
             topic.unsubscribe(handle);
         }
-    }, [params.pageName])
+    }, [params.pageName, enhancedPageDef?.idProperty])
 
     return <>
         <div> {params.pageName} Grid View</div>
