@@ -3,8 +3,10 @@ import { AuthDecorator, DataStore, GetRequest, NOOPDecorator, QueryOptions, Quer
 class PalmyraDataStore<T> implements DataStore<T>{
     options: Record<string, string>;
     authProvider: AuthDecorator = NOOPDecorator;
+    idProperty: string | string[];
 
-    constructor(o: Record<string, string>, authProvider?: AuthDecorator) {
+    constructor(idProperty: string | string[], o: Record<string, string>, authProvider?: AuthDecorator) {
+        this.idProperty = idProperty || "id";
         this.options = o;
         this.authProvider = authProvider || NOOPDecorator;
     }
@@ -22,6 +24,10 @@ class PalmyraDataStore<T> implements DataStore<T>{
     }
     getIdentity(o: T) {
         throw new Error("Method not implemented.");
+    }
+
+    getIdProperty(): string | string[]{
+        return this.idProperty;
     }
 
     post(data: T, options?: QueryOptions): Promise<T> {

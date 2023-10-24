@@ -4,8 +4,10 @@ import { StoreFactoryContext } from '../PalmyraContext';
 
 import { FlexiLayoutRenderer } from 'palmyra-rui';
 import { DataStoreFactory } from '../Types';
+import { HandlerInput } from '.';
 
-const FormViewHandler = () => {
+const FormViewHandler = (p: HandlerInput) => {
+    // const props = getMergedDefaults(p);
     const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
     const params = useParams();
     const [pageDef, setPageDef] = useState(null);

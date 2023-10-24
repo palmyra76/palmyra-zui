@@ -6,8 +6,11 @@ class MockDataStore<T> implements DataStore<T>{
     options: Record<string, string>;
     authProvider: AuthDecorator = NOOPDecorator;
     target: string;
-    constructor(o: Record<string, string>, authProvider?: AuthDecorator) {
+    idProperty: string | string[];
+
+    constructor(idProperty: string | string[], o: Record<string, string>, authProvider?: AuthDecorator) {
         this.options = o;
+        this.idProperty = idProperty;
         var apiRef = o.pageName;
         var base = appConfig.apiBaseContext;
         this.target = base + apiRef;
@@ -29,6 +32,10 @@ class MockDataStore<T> implements DataStore<T>{
     }
     getIdentity(o: T) {
         throw new Error("Method not implemented.");
+    }
+
+    getIdProperty(): string | string[]{
+        return this.idProperty;
     }
 
     post(data: T, options?: QueryOptions): Promise<T> {

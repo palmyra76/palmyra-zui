@@ -3,4 +3,12 @@ import FormEditHandler from "./FormEditHandler"
 import FormViewHandler from "./FormViewHandler"
 import GridViewHandler from "./GridViewHandler"
 
-export {FormEditHandler, FormViewHandler, FormNewHandler, GridViewHandler}
+
+interface HandlerInput {
+    idProperty?: string
+}
+
+
+export { FormEditHandler, FormViewHandler, FormNewHandler, GridViewHandler }
+
+export type { HandlerInput }

@@ -4,8 +4,9 @@ import { StoreFactoryContext } from '../PalmyraContext';
 
 import { FlexiLayoutRenderer } from 'palmyra-rui';
 import { DataStoreFactory } from '../Types';
+import { HandlerInput } from '.';
 
-const FormEditHandler = () => {
+const FormEditHandler = (props: HandlerInput) => {
     const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
 
     const params = useParams();

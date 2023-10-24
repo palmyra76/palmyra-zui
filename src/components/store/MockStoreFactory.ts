@@ -9,17 +9,18 @@ class MockStoreFactory<T> implements DataStoreFactory<T> {
     }
     getPageLayout(request: Record<string, string>, action?: string): Promise<FlexiLayoutDefinition> {
         const format: string = "/api/webconfig/{pageName}/{action}.json";
-        var url:any = StringFormat(format, {...request, action});        
+        var url: any = StringFormat(format, { ...request, action });
         return fetch(url)
             .then((response) => response.json());
     }
 
-    getGridStore(request: Record<string, string>): QueryStore<T> {
-        return new MockDataStore(request);
+    getGridStore(request: Record<string, string>, idProperty: string | string[]): QueryStore<T> {
+
+        return new MockDataStore(idProperty, request);
     }
 
-    getFormStore(request: Record<string, string>): DataStore<T> {
-        return new MockDataStore(request);
+    getFormStore(request: Record<string, string>, idProperty: string | string[]): DataStore<T> {
+        return new MockDataStore(idProperty, request);
     }
 
     getChartStore(request: Record<string, string>): ChartStore<T> {
