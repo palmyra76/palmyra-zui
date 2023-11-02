@@ -14,10 +14,19 @@ const GridViewHandler = (p: HandlerInput) => {
     const [pageDef, setPageDef] = useState(null);
     const navigate = useNavigate();
 
+    const loadPageLayout = (type: string) => {
+        try {
+            storeFactory.getPageLayout(params, type)
+                .then((d) => setPageDef(d))
+                .catch(() => { setPageDef(null) });
+        } catch (e) {
+            console.log(e);
+            console.log("Error while getting pageLayout")
+        }
+    }
+
     useEffect(() => {
-        storeFactory.getPageLayout(params, "grid")
-            .then((d) => setPageDef(d))
-            .catch(() => { setPageDef(null) });
+        loadPageLayout("grid");
     }, [params])
 
     const enhancedPageDef = enhance(pageDef);

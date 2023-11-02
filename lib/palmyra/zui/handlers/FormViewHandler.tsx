@@ -9,19 +9,39 @@ import { getMergedDefaults } from './HandlerUtil';
 
 const FormViewHandler = (p: HandlerInput) => {
     const props = getMergedDefaults(p);
-    const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
+    const storeFactory: DataStoreFactory<any> = useContext(StoreFactoryContext);
     const params = useParams();
     const [pageDef, setPageDef] = useState(null);
     const [data, setData] = useState(null);
 
-    useEffect(() => {
-        appStore.getPageLayout(params, "view").then((d) => setPageDef(d));
-        const id = params.id;
-        const formStore = appStore.getFormStore(params, getIdKey());
-        var request: GetRequest = {
-            key: id
+    const loadPageLayout = (type: string) => {
+        try {
+            storeFactory.getPageLayout(params, type)
+                .then((d) => setPageDef(d))
+                .catch(() => { setPageDef(null) });
+        } catch (e) {
+            console.log(e);
+            console.log("Error while getting pageLayout")
         }
-        formStore.get(request).then(d => { console.log(d); setData(d) });
+    }
+
+    const loadPageData = () => {
+        try {
+            const id = params.id;
+            const formStore = storeFactory.getFormStore(params, getIdKey());
+            var request: GetRequest = {
+                key: id
+            }
+            formStore.get(request).then(d => { console.log(d); setData(d) });
+        } catch (e) {
+            console.log(e);
+            console.log("Error while loading data");
+        }
+    }
+
+    useEffect(() => {
+        loadPageLayout("view");
+        loadPageData();
     }, [params])
 
     const onValidChange = (valid: boolean) => {
@@ -37,7 +57,7 @@ const FormViewHandler = (p: HandlerInput) => {
     return <>
         <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
-            storeFactory={appStore} layoutParams={params}
+            storeFactory={storeFactory} layoutParams={params}
             mode={'formView'} data={data}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}

@@ -32,7 +32,7 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<LeftMenuLayout LeftMenu={ApplicationMenu} appTitle={appConfig.title} />}>
-                  {getDataHandler(":category/:pageName", "email")}
+                  {getDataHandler(":category/:pageName", "id")}
                 </Route>
               </Routes>
             </BrowserRouter>

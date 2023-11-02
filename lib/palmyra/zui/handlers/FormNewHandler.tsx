@@ -7,12 +7,23 @@ import { DataStoreFactory } from '../Types';
 import { HandlerInput } from '.';
 
 const FormNewHandler = (props: HandlerInput) => {
-    const appStore: DataStoreFactory<any> = useContext(StoreFactoryContext);
+    const storeFactory: DataStoreFactory<any> = useContext(StoreFactoryContext);
     const params = useParams();
     const [pageDef, setPageDef] = useState(null);
 
+    const loadPageLayout = (type: string) => {
+        try {
+            storeFactory.getPageLayout(params, type)
+                .then((d) => setPageDef(d))
+                .catch(() => { setPageDef(null) });
+        } catch (e) {
+            console.log(e);
+            console.log("Error while getting pageLayout")
+        }
+    }
+
     useEffect(() => {
-        appStore.getPageLayout(params, "new").then((d) => setPageDef(d));
+        loadPageLayout("new");
     }, [params])
 
     const onValidChange = (valid: boolean) => {
@@ -22,7 +33,7 @@ const FormNewHandler = (props: HandlerInput) => {
     return <>
         <div> {params.pageName} View Form</div>
         {pageDef ? <FlexiLayoutRenderer layout={pageDef}
-            storeFactory={appStore} layoutParams={params}
+            storeFactory={storeFactory} layoutParams={params}
             mode={'formEdit'}
             callbacks={{ onFormValidChange: onValidChange }}
         ></FlexiLayoutRenderer> : <div />}
