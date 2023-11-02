@@ -1,4 +1,4 @@
-import { ChartStore, FlexiLayoutDefinition, MenuDef, QueryStore, DataStore, StringFormat } from "palmyra-rui";
+import { ChartStore, FlexiLayoutDefinition, MenuDef, QueryStore, DataStore, StringFormat, LookupStore } from "palmyra-rui";
 import { DataStoreFactory } from "../../main";
 import { PalmyraDataStore } from "./PalmyraDataStore";
 import { PalmyraChartStore } from "./PalmyraChartStore";
@@ -16,6 +16,10 @@ class PalmyraStoreFactory<T> implements DataStoreFactory<T> {
 
     getGridStore(request: Record<string, string>, idProperty: string | string[]): QueryStore<T> {
         return new PalmyraDataStore(idProperty, request);
+    }
+
+    getLookupStore(request: Record<string, string>, idProperty: string | string[]): LookupStore<T>{
+        throw new Error('Not yet implemented');
     }
 
     getFormStore(request: Record<string, string>, idProperty: string | string[]): DataStore<T> {

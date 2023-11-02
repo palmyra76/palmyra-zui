@@ -34,7 +34,7 @@
     "axios": "^1.4.0",
     "dayjs": "^1.11.9",
     "font-awesome": "^4.7.0",
-    "palmyra-rui": "file:../palmyra-rui/dist",
+    "palmyra-rui": "https://api.github.com/repos/palmyra76/palmyra-rui/tarball",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
